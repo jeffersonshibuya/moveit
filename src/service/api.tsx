@@ -12,6 +12,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: 'https://moveit.haruo.dev/'
+  // baseURL: 'http://localhost:3000/'
 })
 
 export default api;

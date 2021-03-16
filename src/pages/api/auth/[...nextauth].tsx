@@ -51,8 +51,8 @@ const callbacks = {
   async session(session, user) {  
     const { db } = await DbConnection();
     const dbUser = await db.collection('users').findOne({auth_id: user.sub})
+    console.log(user, session)
     return dbUser
-    return {session, user}
   },
   async jwt(token, user, account, profile, isNewUser) {
     return token

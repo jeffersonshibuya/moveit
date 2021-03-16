@@ -45,10 +45,7 @@ const Login = () => {
       </div>
 
       <div className={styles.content}>
-        {loading && <h1> LOADING... </h1>}
-
         <img src="/icons/Logo.svg" alt="Move.it"/>
-
         <strong>Bem-vindo</strong>
 
         {session? (
