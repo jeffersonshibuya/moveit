@@ -62,13 +62,9 @@ const callbacks = {
 
 const options = {
   providers,
-  session: {
-    jwt: true
-  },
-  pages: {
-    signIn: '/auth/signin',
-    newUser: null
-  },
+  // session: {
+  //   jwt: true
+  // },
   // adapter: Adapters.TypeORM.Adapter(
   //   {
   //     type: 'postgres',
@@ -84,9 +80,9 @@ const options = {
   //     }
   //   }
   // ),
-  jwt: {
-    secret: process.env.JWT_SECRET
-  },
+  // jwt: {
+  //   secret: process.env.JWT_SECRET
+  // },
   callbacks
   // database: 'postgres://postgres:docker@127.0.0.1:5432/moveit?synchronize=true'
 }

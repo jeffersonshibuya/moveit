@@ -11,7 +11,7 @@ import axios from 'axios';
 // }
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000/'
+  baseURL: 'http://moveit.haruo.dev/'
 })
 
 export default api;
