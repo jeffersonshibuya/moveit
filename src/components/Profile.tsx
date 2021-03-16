@@ -1,15 +1,19 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ChallengesContext } from '../contexts/ChallengesContext';
-import styles from '../styles/components/Profile.module.css';
+import { Session } from 'next-auth/client'
 
-const Profile: React.FC = () => {
+import styles from '../styles/components/Profile.module.css';
+import { User } from 'next-auth';
+
+
+const Profile = ({email, image, name}: User) => {
   const { level } = useContext(ChallengesContext)
 
   return (
     <div className={styles.profileContainer}>
-      <img src="https://avatars.githubusercontent.com/u/10772632?s=400&u=6ab642f0e98e843d7ed1faeaed71c21c9ac2a819&v=4" alt="Jefferson Shibuya"/>
+      <img src={image} alt={name}/>
       <div>
-        <strong>Jefferson Shibuya</strong>
+        <strong>{name}</strong>
         <p>
           <img src="icons/level.svg" alt="level"/>
           Level {level}

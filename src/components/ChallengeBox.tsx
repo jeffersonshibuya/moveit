@@ -1,3 +1,4 @@
+import { useSession } from 'next-auth/client'
 import { useContext } from 'react'
 import { ChallengesContext } from '../contexts/ChallengesContext'
 import { CountdownContext } from '../contexts/CountdownContext'
@@ -6,9 +7,10 @@ import styles from '../styles/components/ChallengeBox.module.css'
 const ChallengeBox: React.FC = () => {
   const { activeChallenge, resetChallenge, completeChallenge } = useContext(ChallengesContext)
   const { resetCountdown } = useContext(CountdownContext)
+  const [session] = useSession()
 
-  function handleChallengeSucceeded() {
-    completeChallenge();
+  function handleChallengeSucceeded(id: string) {
+    completeChallenge(id);
     resetCountdown()
   }
 
@@ -38,7 +40,7 @@ const ChallengeBox: React.FC = () => {
                 Falhei
               </button>
               <button type="button" 
-                onClick={handleChallengeSucceeded} 
+                onClick={() => handleChallengeSucceeded(session._id)} 
                 className={styles.challengeSucceededButton}>
                 Completei
               </button>

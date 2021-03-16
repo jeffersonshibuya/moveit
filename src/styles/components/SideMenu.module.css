@@ -1,0 +1,71 @@
+.container {
+  background: var(--white);
+  width: 112px;
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; */
+  /* left: 0;
+  top: 0;
+  height: 100vh; */
+  align-items: center;
+}
+
+.container > img {
+  padding-top: 1.5rem;
+}
+
+.container button {
+  border: 0;
+  background: transparent;
+  margin-bottom: 1rem;
+}
+
+.container nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+.container nav a {
+  display: block;
+  text-align: center;
+  margin-bottom: 1.75rem;
+  width: 100%;
+  position: relative;
+}
+
+.container nav a::after {
+  content: "";
+  height: 140%;
+  background: var(--blue-dark);
+  width: 14px;
+  top: -7px;
+  left: -10px;
+  border-radius: 4px;
+  transition: all 0.35s;
+  opacity: 0;
+}
+
+.container nav a:hover::after {
+  opacity: 1;
+}
+
+.container nav a.active::after {
+  opacity: 1;
+}
+
+.container nav a.active img {
+  filter: grayscale(0);
+}
+
+.container nav a img {
+  width: 40px;
+  filter: grayscale(1);
+}
+
+.container nav a img:hover {
+  filter: grayscale(0);
+}

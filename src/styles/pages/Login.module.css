@@ -1,0 +1,155 @@
+.container {
+  background: var(--blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: sace-between;
+  height: 100vh;
+  width: 100vw;
+}
+
+.backgroundImage {
+  flex: 1;
+}
+
+.container .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  color: var(--background);
+  margin-left: 8rem;
+}
+
+.container .content > img {
+  padding: 0 0 5rem 0;
+}
+
+.container .content strong {
+  font-size: 3rem;
+  padding-bottom: 2.5rem;
+}
+
+.container .content div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container .content div > img {
+  margin-right: 1rem;
+}
+
+.container .content div > p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  max-width: 254px;
+  color: var(--text-highlight);
+}
+
+.container .content .form {
+  margin-top: 2rem;
+}
+
+.container .content .form > input {
+  font-size: 1.2rem;
+  color: var(--white);
+  padding: 1rem 0;
+  padding: 1rem 1rem;
+  width: 340px;
+  background: var(--blue);
+  border: 0;
+}
+.container .content .form > input::placeholder {
+  color: var(--text-highlight);
+}
+
+.container .content .form > button {
+  color: var(--text-highlight);
+  padding: 0.9rem 0;
+  width: 60px;
+  background: var(--green);
+  border: 0;
+}
+
+.container .content .userSession {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.container .content .userSession .userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--white);
+  font-weight: 600;
+  width: 100%;
+}
+
+.container .content .userSession .userInfo > img {
+  width: 55px;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.container .content .userSession .userAction {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.container .content .userSession .userAction > button {
+  display: inline-block;
+  padding: 0.6rem;
+  width: 100%;
+  border: 0;
+  background-color: var(--green);
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: Rajdhani;
+  letter-spacing: 1px;
+}
+
+.container .content .userSession .userAction > button.logout {
+  background: var(--red);
+}
+
+.container .content .loginSection {
+  display: flex;
+  width: 300px;
+  margin-top: 2rem;
+  flex-direction: column;
+}
+
+.container .content .loginSection button {
+  background: transparent;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0.2rem 0;
+  width: 100%;
+  border-style: none;
+  border: 1px solid gray;
+  transition: background 0.2s;
+  margin-bottom: 1rem;
+}
+
+.container .content .loginSection button img {
+  margin: 0 0.2rem;
+}
+
+.container .content .loginSection button p {
+  flex: 1;
+}
+
+.container .content .loginSection button:hover {
+  background: var(--blue);
+}
+
+.container .content .loginSection button:hover p {
+  color: var(--white);
+}

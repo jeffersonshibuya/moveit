@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.user {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  height: 6rem;
+  background: var(--white);
+  margin-bottom: 1rem;
+}
+
+.position {
+  margin-right: 0.5rem;
+  height: 6rem;
+  width: 4.5rem;
+  display: flex;
+  align-items: center;
+  background: var(--white);
+}
+
+.position strong {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.profileContainer > img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin-left: 1.5rem;
+}
+
+.profileContainer div {
+  margin-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+  line-height: 1.8rem;
+}
+
+.profileContainer div strong {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--title);
+}
+
+.profileContainer div p {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.profileContainer div p img {
+  width: 14px;
+  height: 16px;
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+.user .userName p {
+  display: flex;
+  align-items: center;
+}
+
+.user .userName p > img {
+  width: 16px;
+  height: 16px;
+}
+
+.user span {
+  margin-right: 4rem;
+}
+
+.user span strong {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--blue-dark);
+  margin-right: 7px;
+}

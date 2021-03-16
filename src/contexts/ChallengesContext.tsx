@@ -2,6 +2,7 @@ import { createContext, useState, ReactNode, useEffect } from 'react'
 import challenges from '../../challenges.json'
 import Cookies from 'js-cookie';
 import { LevelUpModal } from '../components/LevelUpModal';
+import api from '../service/api'
 
 interface IChallenge {
   type: 'body' | 'eye',
@@ -18,7 +19,7 @@ interface ChallengesContextData {
   levelUp:  () => void;
   startNewChallenge: () => void;
   resetChallenge: () => void;
-  completeChallenge: () => void;
+  completeChallenge: (id: string) => void;
   closeLevelModal: () => void;
 }
 
@@ -80,11 +81,12 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
     setActiveChallenge(null);
   }
 
-  function completeChallenge() {
+  async function completeChallenge(id: string) {
     if(!activeChallenge) {
       return;
     }
 
+    let newLevel = level;
     const { amount } = activeChallenge;
 
     let finalExperience = currentExperience + amount;
@@ -92,11 +94,18 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
     if(finalExperience >= experienceToNextLevel) {
       finalExperience = finalExperience - experienceToNextLevel;
       levelUp();
+      newLevel = level + 1;
     }
-
     setCurrentExperience(finalExperience);
     setActiveChallenge(null);
     setChallengesCompleted(challengesCompleted + 1);
+    
+    await api.put('api/users', {
+      id,
+      level: newLevel, 
+      currentExperience: finalExperience, 
+      challengesCompleted: challengesCompleted + 1
+    })
   }
 
   return (
